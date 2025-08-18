@@ -11,6 +11,7 @@ This project demonstrates the process of deploying a **Concourse CI/CD instance*
      alt="Diagram of Concourse CI Internal Architecture. Shows the Load Balancer, ATC, TSA, and Worker sections, including how it uses Garden and BaggageClaim for API's."
      style="align:center;" />
 </p>
+
 ---
 
 ## Objectives
