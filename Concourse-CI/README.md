@@ -442,6 +442,31 @@ fly -t homelab targets
 
 ## Step 7: Run the Concourse Example Pipelines
 
+To validate the Concourse setup, we’ll use an official example from the [concourse/examples](https://github.com/concourse/examples) GitHub repository.
+
+- Clone the repo:
+
+```bash
+git clone https://github.com/concourse/examples.git
+cd examples/pipelines
+```
+
+- Use the `set-pipelines.yml` pipeline to set and run all the other pipelines.
+
+```bash
+fly -t homelab set-pipeline -p set-pipelines -c pipelines/set-pipelines.yml
+fly -t homelab unpause-pipeline -p set-pipelines
+```
+
+- Trigger a job:
+
+```bash
+fly -t homelab trigger-job -j set-pipelines/set-self -w
+fly -t homelab trigger-job -j set-pipelines/set-example-pipelines -w
+```
+
+If successful, you’ll see the job output directly in your terminal.
+
 ---
 
 ## Results
